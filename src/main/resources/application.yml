@@ -1,0 +1,26 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  jpa:
+    show-sql: true # API 호출시, SQL 문을 콘솔에 출력합니다.
+    generate-ddl: true  # @Entity annotation 을 분석해 DDL을 생성
+    database-platform: org.hibernate.dialect.MySQL8Dialect # JPA 설정
+
+  # MySQL 관련 설정
+  datasource:
+    url: jdbc:mysql://localhost:3307/sample?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useSSL=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # ansi 컬러 출력 활성화
+  output:
+    ansi:
+      enabled: always
+
+  # 기본 로그 레벨 설정
+  logging:
+    level:
+      com: info
